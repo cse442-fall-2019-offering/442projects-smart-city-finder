@@ -11,10 +11,14 @@ Then open a terminal and do the following:
 
 (make sure you used `cd` to enter the directory you cloned the project's repository into)
 
-Then, in a the terminal, create a virtual environment
+Then, in a the terminal, create a virtual environment:
 
     python -m venv env
 
-Install the project's dependencies
+Install the project's dependencies:
 
     .\env\Scripts\pip.exe install -r requirements.txt
+
+You can then start Django's built-in development server:
+
+    .\env\Scripts\python.exe .\server\manage.py runserver
