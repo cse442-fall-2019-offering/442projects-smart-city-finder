@@ -3,3 +3,8 @@
 
 # Python venv
 env/
+*.pyc
+*.pyo
+
+# Django stuff
+db.sqlite3
