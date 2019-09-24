@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quiz - Smart City Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-2">Smart City Finder</h1>
+      <form action="{% url 'quiz' %}" method="post">
+        {% csrf_token %}
+        <!-- Demographic Information -->
+        <h2 class="display-3">Part 1</h2>
+        <!-- height -->
+        <div class="form-group">
+          <label for="">Height</label>
+          <input class="form-control" type="text" value="5&apos;10&quot;">
+        </div>
+        <!-- weight -->
+        <div class="form-group">
+            <label for="">Weight</label>
+            <input class="form-control" type="text" value="145 lbs">
+        </div>
+        <!-- age -->
+        <div class="form-group">
+            <label for="">Age</label>
+            <input class="form-control" type="number" value="20">
+        </div>
+        <!-- gender -->
+        <div class="form-group">
+            <span for="">Gender</span>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Male</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Female</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Other</label>
+            </div>
+        </div>
+  
+        <h2 class="display-3">Part 2</h2>
+        <!-- job title -->
+        <div class="form-group">
+          <label for="">Job Title</label>
+          <input class="form-control" type="text" value="">
+        </div>
+        <!-- monthly salary -->
+        <div class="form-group">
+          <label for="">Monthly Salary</label>
+          <input class="form-control" type="text" value="">
+        </div>
+        <!-- work shift hours -->
+        <div class="form-group">
+          <label for="">Work Shift Hours</label>
+          <input class="form-control" type="text" value="">
+        </div>
+
+        <h2 class="display-3">Part 3</h2>
+        <!-- canidate cities -->
+        <!-- transportation preferences -->
+        <div class="form-group">
+            <span for="">Transportation Preferences</span>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Car</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Public Transportation</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Walking</label>
+            </div>
+        </div>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
