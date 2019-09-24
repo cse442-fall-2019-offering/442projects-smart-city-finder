@@ -6,7 +6,28 @@
     <title>Quiz - Smart City Finder</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#quizNavbar">
+    <div class="bg-light navbar navbar-expand-md navbar-light bg-light sticky-top" id="quizNavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">Quiz</a>
+        <button class="navbar-toggler" data-target="#quizNavbarCollapse" data-toggle="collapse" type="button" aria-controls="#quizNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="quizNavbarCollapse">
+          <ul class="nav navbar-nav" id="quizNavbarNav">
+            <li class="nav-item">
+              <a class="nav-link" href="#quizSectionDemographics">Part 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quizSectionCareer">Part 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quizSectionCitiesTransportation">Part 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <h1 class="display-2">Smart City Finder</h1>
       {% include "quiz/include_quiz_form.html" %}
