@@ -8,3 +8,6 @@ env/
 
 # Django stuff
 db.sqlite3
+
+# OSX stuff
+.DS_Store
