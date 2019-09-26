@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from quiz.views import quiz_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('quiz/', quiz_view, name='quiz'),
+    path('', views.home),
 ]
