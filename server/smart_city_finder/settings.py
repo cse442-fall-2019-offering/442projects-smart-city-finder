@@ -31,8 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'landingpage1',
-    'quiz',
+    'smart_city_finder',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
