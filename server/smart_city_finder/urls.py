@@ -18,7 +18,10 @@ from django.urls import path
 from django.conf.urls import url, include
 from landingpage1.views import index
 
+from quiz.views import quiz_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('quiz/', quiz_view, name='quiz'),
     path('', index),
 ]

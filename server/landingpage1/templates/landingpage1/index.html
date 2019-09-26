@@ -3,10 +3,8 @@
 <head>
   <title>Smart City Finder</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
    html {
     scroll-behavior: smooth;
@@ -72,44 +70,38 @@
   </style>
 </head>
 <body>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" id="home_page" href="#">Smart City Finder</a>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="home_page" href="#">Smart City Finder</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#privacy">Our Privacy Policy</a></li>
+        <li><a href="#info">Information Form</a></li>
+        <li><a href="#results">Results</a>
+      </ul>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#privacy">Our Privacy Policy</a></li>
-      <li><a href="#info">Information Form</a></li>
-      <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Information Form <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li> -->
-      <li><a href="#results">Results</a>
-    </ul>
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul> -->
-  </div>
-</nav>
+  </nav>
   <br / >
   <br / >
-<div class= "main" id = "home">
-    <h2 id="title"> Introduction </h2>
-</div>
-<div class="main" id = "privacy">
-    <h2 id="title"> Our Privacy Policy </h2>
-</div>
-<div class="main" id = "info">
-    <h2 id="title"> Information Form </h2>
-</div>
-<div class="main" id = "results">
-  <h2 id="title"> Results </h2>
-</div>
-</body>
+  <div class="container">
+    <div class= "main" id = "home">
+      <h2 id="title"> Introduction </h2>
+    </div>
+    <div class="main" id = "privacy">
+      <h2 id="title"> Our Privacy Policy </h2>
+    </div>
+    <div class="main" id = "info">
+      <h2 id="title"> Information Form </h2>
+      {% include "quiz/include_quiz_form.html" %}
+    </div>
+    <div class="" id = "results">
+      <h2 id="title"> Results </h2>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
