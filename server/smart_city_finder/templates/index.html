@@ -12,28 +12,103 @@
     <link rel="stylesheet" href="{% static 'assets/css/Header-Blue.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Testimonials.css' %}">
+    <style>
+        html {
+         scroll-behavior: smooth;
+        }
+     #home {
+       height: 800px;
+       background-color: blanchedalmond;
+       }
+     
+     #privacy {
+        height: 600px;
+       background-color: blanchedalmond;
+     }
+     #info {
+        /* height: 600px; */
+       background-color: blanchedalmond;
+     }
+     #results {
+        /* height: 600px; */
+       background-color: blanchedalmond;
+     }
+     
+     .navbar {
+       overflow: hidden;
+       background-color: wheat !important;
+       position: fixed;
+       top: 0;
+       width: 100%;
+     }
+     
+     .navbar a {
+       float: left;
+       display: block;
+       color: black;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+       font-size: 17px;
+     }
+     
+     .navbar a:hover {
+       background-color: #ddd;
+       color: black;
+     }
+     
+     #home_page a:hover {
+       color: black;
+     }
+     
+     .navbar a.active {
+       background-color: #4CAF50;
+       color: white;
+     }
+     
+     /* #results {
+         margin-top: 60%;
+     } */
+     /* .content {
+       padding: 16px;
+     } */
+       </style>
 </head>
 
 <body>
+<div class="main">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" id="home_page" href="#"
+              >Smart City Finder</a
+            >
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Our Privacy Policy</a></li>
+              <li><a href="#info">Information Form</a></li>
+              <li><a href="#results">Results</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div>
         <div class="header-blue">
-            <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-                <div class="container-fluid"><a class="navbar-brand" href="#">Smart City Finder</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse"
-                        id="navcol-1">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
-                            <li class="nav-item" role="presentation"></li>
-                        </ul>
-                        <form class="form-inline mr-auto" target="_self">
-                            <div class="form-group"><label for="search-field"></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
-                        </form><span class="navbar-text"> </span></div>
-                </div>
-            </nav>
             <div class="container hero">
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
@@ -45,11 +120,12 @@
         </div>
     </div>
     {% include "quiz/include_quiz_form.html" %}
-    <div class="testimonials-clean" style="background-color: rgb(241,247,252);">
+
+   <div class="testimonials-clean" id = "results" style="background-color: rgb(241,247,252);">
         <div class="container" style="height: 720px;">
             <div class="intro">
                 <h2 class="text-center" style="font-size: 48px;">City A</h2>
-                <p class="text-center" style="font-size: 24px;">&nbsp;CIty A is the best for you according to our system. City A ranks the highest in all three of the following categories. Here is why:</p>
+                <p class="text-center" style="font-size: 24px;">&nbsp;City A is the best for you according to our system. City A ranks the highest in all three of the following categories. Here is why:</p>
             </div>
             <div class="row people" style="margin: 0px;">
                 <div class="col-md-6 col-lg-4 item" style="height: 320px;">
@@ -79,8 +155,12 @@
             </div>
         </div>
     </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
