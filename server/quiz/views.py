@@ -6,5 +6,7 @@ from django.shortcuts import render
 
 def quiz_view(request):
     # check if this is a HTTP POST request, then process the quiz data
-    raise Http404()
-    # return render(request, 'quiz/quiz.html')
+    if request.method != 'POST':
+        raise Http404()
+    context = {}
+    return render(request, 'quiz/quiz_results.html', context)
