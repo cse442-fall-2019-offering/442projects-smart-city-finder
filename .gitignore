@@ -1,0 +1,13 @@
+# VSCode Project Settings
+.vscode/
+
+# Python venv
+env/
+*.pyc
+*.pyo
+
+# Django stuff
+db.sqlite3
+
+# OSX stuff
+.DS_Store
