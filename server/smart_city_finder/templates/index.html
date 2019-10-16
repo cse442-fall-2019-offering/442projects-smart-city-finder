@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Header-Blue.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Testimonials.css' %}">
     <style>
@@ -20,7 +19,7 @@
        height: 800px;
        background-color: blanchedalmond;
        }
-     
+
      #privacy {
         height: 600px;
        background-color: blanchedalmond;
@@ -33,7 +32,7 @@
         /* height: 600px; */
        background-color: blanchedalmond;
      }
-     
+
      .navbar {
        overflow: hidden;
        background-color: wheat !important;
@@ -41,7 +40,7 @@
        top: 0;
        width: 100%;
      }
-     
+
      .navbar a {
        float: left;
        display: block;
@@ -51,21 +50,21 @@
        text-decoration: none;
        font-size: 17px;
      }
-     
+
      .navbar a:hover {
        background-color: #ddd;
        color: black;
      }
-     
+
      #home_page a:hover {
        color: black;
      }
-     
+
      .navbar a.active {
        background-color: #4CAF50;
        color: white;
      }
-     
+
      /* #results {
          margin-top: 60%;
      } */
@@ -107,17 +106,22 @@
           </div>
         </div>
       </nav>
-    <div>
-        <div class="header-blue">
-            <div class="container hero">
-                <div class="row">
-                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                        <h1 style="font-size: 56px;width: 560px;margin: 80px 0px 40px 0px;">Find the best city for you</h1>
-                        <p style="font-size: 28px;width: 720px;margin: 0px 0px 60px 0px;">Smart City Finder helps you find the best city to settle in given your current job offers. The app does not transfer your data to any server. Your data are kept in your browser and are deleted right after result is displayed so
-                            you don't have to worry about your privacy.</p><button class="btn btn-light btn-lg action-button" type="button">Learn More</button></div>
-                </div>
-            </div>
-        </div>
+    <div style="display:flex; flex-direction:column;
+                width:100%; min-height:50vh;
+                background-image:linear-gradient(to right, #0045a6, #5a95e8);">
+      <h3 style="padding-left:10vw; padding-top:14vh; font-size:5vw;
+                 color:White;">Find The Best City For You</h3>
+
+      <p style="padding-left:10vw; padding-top:3vh; padding-bottom:8vh;
+                max-width:60%; font-size:28px; color:White;">
+                Smart City Finder utilizes machine learning algorithm to help
+                you find the best city to settle in, given your height, weight,
+                age, gender, transportation preference and basic information
+                about your job offer. With privacy and security in mind, your
+                information remains private and secure and they will be deleted
+                right after result is displayed.
+      </p>
+
     </div>
     {% include "quiz/include_quiz_form.html" %}
 
