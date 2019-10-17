@@ -87,7 +87,28 @@
             <label class="form-check-label" for="">Walking</label>
           </div>
         </div>
-        <a class="btn btn-primary" href="#quizSectionCitiesTransportation" style="text-transform: uppercase;">Submit</a>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Thanks for filling the form!</h4>
+              </div>
+              <div class="modal-body text-center">
+                <p>Your results should show up soon.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
   </form>
