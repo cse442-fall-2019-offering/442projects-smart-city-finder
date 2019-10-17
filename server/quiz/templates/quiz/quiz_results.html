@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block navbar_nav_links %}
+  {{ block.super }}
+  <li><a href="#results">Results</a></li>
+{% endblock navbar_nav_links %}
+
+
+{% block content %}
+    <br/>
+    <br/>
+    {% include "quiz/include_quiz_results.html" %}
+{% endblock content %}
