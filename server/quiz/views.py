@@ -4,8 +4,20 @@ from django.shortcuts import render
 
 from time import sleep
 
-# Create your views here.
+def get_inputs(request):
+    print(request)
+    
+def get_model():
+    pass
 
+def sanitize_input():
+    '''
+
+    
+    '''
+    pass
+
+# Create your views here.
 def quiz_view(request):
     # check if this is a HTTP POST request, then process the quiz data
     if request.method != 'POST':

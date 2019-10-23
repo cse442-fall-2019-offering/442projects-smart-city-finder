@@ -3,4 +3,4 @@ pytz==2019.2
 sqlparse==0.3.0
 numpy==1.17.2
 pandas==0.25.2
-mxnet==1.5.0
+mxnet
