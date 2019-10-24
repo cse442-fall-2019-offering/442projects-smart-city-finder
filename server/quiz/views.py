@@ -3,11 +3,12 @@ from django.http import Http404
 from django.shortcuts import render
 
 from time import sleep
+
 import numpy as np
-from mxnet import nd
+from mxnet import nd, ndarray, gluon, autograd
 from mxnet.gluon import nn
 
-def get_user_input(request):
+def retrieve_user_input(request):
     '''
     Retrieve user inputted data from quiz form.
     param:
@@ -62,7 +63,7 @@ def retrieve_model():
     return mlp
 
 
-def train_model(model):
+def train_model(model, data):
     '''
     Train the MLP on dummy data.
     '''
@@ -73,7 +74,8 @@ def inference(model, user_input):
     '''
     Run the MLP on user input to get prediction.
     '''
-    pass
+    user_input = nd.array(user_input)
+    return nd.softmax(model(user_input))[0]
 
 
 # Create your views here.
@@ -82,8 +84,15 @@ def quiz_view(request):
     if request.method != 'POST':
         raise Http404()
 
-    # FIXME remove this when we have an actual implementation
-    sleep(0.25) # pretend that we are actually doing work
+    model = retrieve_model()
+    input = retrieve_user_input(request)
+    probabilities = inference(model, input)
+    print(probabilities)
+    
+    # FIXME:
+    # finalize the city of choice based on the probabilities
+    # and then present it on the resulting page
+    sleep(3)
 
     context = {}
     return render(request, 'quiz/quiz_results.html', context)
