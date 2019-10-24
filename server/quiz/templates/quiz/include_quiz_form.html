@@ -1,0 +1,115 @@
+<div class="quiz-form" id = "info">
+    <form action="{% url 'quiz' %}" method="post">
+    {% csrf_token %}
+
+    <!-- Demographic Information -->
+    <div class="contact-clean">
+      <div class="contact-clean quiz-form-section" id="quizSectionDemographics">
+        <h2 class="text-center">Personal Info</h2>
+        <!-- height -->
+        <div class="form-group">
+          <label for="">Height</label>
+          <input class="form-control" type="text" value="" placeholder="5&apos;10&quot;">
+        </div>
+        <!-- weight -->
+        <div class="form-group">
+          <label for="">Weight</label>
+          <input class="form-control" type="text" value="" placeholder="123 lbs">
+        </div>
+        <!-- age -->
+        <div class="form-group">
+          <label for="">Age</label>
+          <input class="form-control" type="number" value="" placeholder="20">
+        </div>
+        <!-- gender -->
+        <div class="form-group">
+          <span for="">Gender</span>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="">
+            <label class="form-check-label" for="">Male</label>
+          </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="">
+              <label class="form-check-label" for="">Female</label>
+            </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="">
+            <label class="form-check-label" for="">Other</label>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="#quizSectionCareer" style="text-transform: uppercase;">Next</a>
+      </div>
+    </div>
+
+    <div class="contact-clean">
+      <div class="quiz-form-section" id="quizSectionCareer">
+        <h2 class="text-center">Job Offers Info</h2>
+        <!-- job title -->
+        <div class="form-group">
+          <label for="">Job Title</label>
+          <input class="form-control" type="text" value="" placeholder="Software Engineer">
+        </div>
+        <!-- monthly salary -->
+        <div class="form-group">
+          <label for="">Monthly Salary</label>
+          <input class="form-control" type="text" value="" placeholder="$0,000">
+        </div>
+        <!-- work shift hours -->
+        <div class="form-group">
+          <label for="">Work Shift Hours</label>
+          <input class="form-control" type="text" value="" placeholder="40">
+        </div>
+        <a class="btn btn-primary" href="#quizSectionCitiesTransportation" style="text-transform: uppercase;">Next</a>
+      </div>
+    </div>
+
+    <div class="contact-clean">
+      <div class="quiz-form-section" id="quizSectionCitiesTransportation">
+        <h2 class="text-center">Other Preferences</h2>
+        <!-- canidate cities -->
+        <div class="form-group">
+          <label for="">Canidate Cities</label>
+          <input class="form-control" type="text" value="" placeholder="Buffalo, New York, San Fransisco">
+        </div>
+        <!-- transportation preferences -->
+        <div class="form-group">
+          <span for="">Transportation Preferences</span>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="">
+            <label class="form-check-label" for="">Car</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="">
+            <label class="form-check-label" for="">Public Transportation</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="">
+            <label class="form-check-label" for="">Walking</label>
+          </div>
+        </div>
+  <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="text-transform: uppercase;">Submit</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Thanks for filling the form!</h4>
+              </div>
+              <div class="modal-body text-center">
+                <p>Your results should show up soon.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
