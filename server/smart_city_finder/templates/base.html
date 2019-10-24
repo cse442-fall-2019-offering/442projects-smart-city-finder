@@ -101,7 +101,8 @@
             <ul class="nav navbar-nav ml-auto">
 {% block navbar_nav_links %}
               <li><a href="{% url 'landing_page' %}#">Home</a></li>
-              <li><a href="{% url 'landing_page' %}#">Our Privacy Policy</a></li>
+              <li><a href="{% url 'landing_page' %}privacy">Privacy Policy</a></li>
+			  <li><a href="{% url 'landing_page' %}terms">Terms of Service</a></li>
               <li><a href="{% url 'landing_page' %}#info">Information Form</a></li>
 {% endblock navbar_nav_links %}
             </ul>
