@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from quiz.views import quiz_view
+from .views import privacy, terms
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('quiz/', quiz_view, name='quiz'),
     path('', views.home, name='landing_page'),
+    path('privacy/', privacy, name='privacy'),
+    path('terms/', terms, name='terms'),
 ]
