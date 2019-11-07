@@ -8,6 +8,9 @@ import numpy as np
 from mxnet import nd, ndarray, gluon, autograd
 from mxnet.gluon import nn
 
+from smart_city_finder.views import home # for homepage redirection
+
+
 def retrieve_user_input(request):
     '''
     Retrieve user inputted data from quiz form.
@@ -82,13 +85,15 @@ def inference(model, user_input):
 def quiz_view(request):
     # check if this is a HTTP POST request, then process the quiz data
     if request.method != 'POST':
-        raise Http404()
+        # Instead of raising Http404 exception,
+        # simply redirect user back to the homepage
+        return home(request)
 
     model = retrieve_model()
     input = retrieve_user_input(request)
     probabilities = inference(model, input)
     print(probabilities)
-    
+
     # FIXME:
     # finalize the city of choice based on the probabilities
     # and then present it on the resulting page
