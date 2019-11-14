@@ -1,0 +1,5 @@
+1. Acceptance tests:
+  ->They should be detailed enough for the user to follow the steps
+  ->Can the user do all the tasks mentioned in the acceptance tests without any confusion?
+  ->Every task(except if there's a task for which you need to check against all the tasks, there's no need for acceptance tests. Example: Issue #49) needs to have at least one acceptance test
+
