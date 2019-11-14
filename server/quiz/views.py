@@ -78,7 +78,26 @@ def inference(model, user_input):
     Run the MLP on user input to get prediction.
     '''
     user_input = nd.array(user_input)
-    return nd.softmax(model(user_input))[0]
+    return nd.sigmoid(model(user_input)).asnumpy().tolist()[0]
+
+
+def format_output(ratings, preferred_cities=None):
+    default_cities = [
+        'Austin', 'Buffalo', 'Dallas', 'Denver', 'Los Angeles',
+        'New York City', 'San Francisco', 'San Jose', 'Seattle'
+    ]
+
+    candidate_cities = []
+
+    if preferred_cities is not None:
+        count = len(preferred_cities)
+        assert(count <= 9)
+        candidate_cities = preferred_cities + default_cities[count:]
+    else:
+        candidate_cities = default_cities
+
+    result = dict(zip(candidate_cities, ratings))
+    return result
 
 
 # Create your views here.
@@ -91,13 +110,16 @@ def quiz_view(request):
 
     model = retrieve_model()
     input = retrieve_user_input(request)
-    probabilities = inference(model, input)
-    print(probabilities)
+    ratings = inference(model, input)
 
     # FIXME:
-    # finalize the city of choice based on the probabilities
-    # and then present it on the resulting page
+    #   Improve quiz form so that user's preferred cities can be retrieved below
+    preferred_cities = None
+    result = format_output(ratings, preferred_cities)
+    print(result)
     sleep(3)
 
-    context = {}
-    return render(request, 'quiz/quiz_results.html', context)
+    # FIXME:
+    #   Improve result presentation page such that result
+    #   can be rendered as a list of cities along with its ratings
+    return render(request, 'quiz/quiz_results.html', {})
