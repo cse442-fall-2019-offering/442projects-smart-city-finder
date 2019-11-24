@@ -1,7 +1,8 @@
+   {% load static %}
    <div class="testimonials-clean" id = "results" style="background-color: rgb(241,247,252);">
         <div class="container" style="height: 720px;">
+            <img class="img-fluid mx-auto d-block" style="margin: 0 auto;" alt="Photo of City A" src="{% static '/assets/images/'|add:city_photo_filename %}" />
             <div class="intro">
-                <h2 class="text-center" style="font-size: 48px;">City A</h2>
                 <p class="text-center" style="font-size: 24px;">&nbsp;City A is the best for you according to our system. City A ranks the highest in all three of the following categories. Here is why:</p>
             </div>
             <div class="row people" style="margin: 0px;">
