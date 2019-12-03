@@ -1,6 +1,7 @@
 from django import forms
 from django.http import Http404
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 from time import sleep
 
@@ -122,4 +123,4 @@ def quiz_view(request):
     # FIXME:
     #   Improve result presentation page such that result
     #   can be rendered as a list of cities along with its ratings
-    return render(request, 'quiz/quiz_results.html', {})
+    return HttpResponseRedirect(request.path_info)
