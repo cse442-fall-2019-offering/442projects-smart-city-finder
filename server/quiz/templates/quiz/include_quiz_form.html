@@ -1,5 +1,5 @@
 <div class="quiz-form" id = "info">
-    <form action="{% url 'quiz' %}" method="post">
+    <form action="{% url 'quiz' %}" method="post" id="quizForm">
     {% csrf_token %}
 
     <!-- Demographic Information -->
@@ -19,8 +19,9 @@
         <!-- age -->
         <div class="form-group">
           <label for="">Age</label>
-          <input class="form-control" type="number" value="" placeholder="20">
+          <input class="form-control" id="age" min="13" type="number" value="" placeholder="20"> 
         </div>
+
         <!-- gender -->
         <div class="form-group">
           <span for="">Gender</span>
@@ -87,13 +88,20 @@
             <label class="form-check-label" for="">Walking</label>
           </div>
         </div>
-  <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="text-transform: uppercase;">Submit</button>
-
+        <input type="submit" class="btn btn-info btn-lg"
+            style="text-transform: uppercase;"
+            value="Submit" />
+  <!-- <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="text-transform: uppercase;">Submit</button> -->
         <!-- Modal -->
+        <!-- <script>
+            var ageEntered = document.getElementById("age");
+            if(ageEntered < 13) {
+              alert("Come back when you're over 13!");
+            }
+          </script> -->
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
           
-            <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" data-dismiss="modal">&times;</button>
@@ -106,7 +114,6 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

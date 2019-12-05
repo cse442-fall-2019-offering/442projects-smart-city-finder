@@ -1,12 +1,26 @@
 from django import forms
 from django.http import Http404
 from django.shortcuts import render
-
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 from time import sleep
 
 import numpy as np
 from mxnet import nd, ndarray, gluon, autograd
 from mxnet.gluon import nn
+
+from smart_city_finder.views import home # for homepage redirection
+
+
+CITY_PHOTO_FILENAME_MAP = {
+    'Austin':      'cities/us-texas-austin.jpg',
+    'Buffalo':     'cities/us-ny-buffalo.jpg',
+    'Dallas':      'cities/us-ny-dallas.jpg',
+    'Denver':      'cities/us-co-denver.jpg',
+    'Los Angeles': 'cities/us-ca-losangeles.jpg',
+    'New York':    'cities/us-ny-newyork.jpg',
+}
+
 
 def retrieve_user_input(request):
     '''
@@ -75,24 +89,55 @@ def inference(model, user_input):
     Run the MLP on user input to get prediction.
     '''
     user_input = nd.array(user_input)
-    return nd.softmax(model(user_input))[0]
+    return nd.sigmoid(model(user_input)).asnumpy().tolist()[0]
+
+
+def format_output(ratings, preferred_cities=None):
+    default_cities = [
+        'Austin', 'Buffalo', 'Dallas', 'Denver', 'Los Angeles',
+        'New York City', 'San Francisco', 'San Jose', 'Seattle'
+    ]
+
+    candidate_cities = []
+
+    if preferred_cities is not None:
+        count = len(preferred_cities)
+        assert(count <= 9)
+        candidate_cities = preferred_cities + default_cities[count:]
+    else:
+        candidate_cities = default_cities
+
+    result = dict(zip(candidate_cities, ratings))
+    return result
 
 
 # Create your views here.
 def quiz_view(request):
     # check if this is a HTTP POST request, then process the quiz data
     if request.method != 'POST':
-        raise Http404()
+        # Instead of raising Http404 exception,
+        # simply redirect user back to the homepage
+        return home(request)
 
     model = retrieve_model()
     input = retrieve_user_input(request)
-    probabilities = inference(model, input)
-    print(probabilities)
-    
+    ratings = inference(model, input)
+
     # FIXME:
-    # finalize the city of choice based on the probabilities
-    # and then present it on the resulting page
-    sleep(3)
+    #   Improve quiz form so that user's preferred cities can be retrieved below
+    preferred_cities = None
+    result = format_output(ratings, preferred_cities)
+    print(result)
+    # sleep(20)
+    # # FIXME:
+    # #   Improve result presentation page such that result
+    # #   can be rendered as a list of cities along with its ratings
+    # return redirect('/')
 
     context = {}
-    return render(request, 'quiz/quiz_results.html', context)
+
+    # for the ajax request:
+    return render(request, 'quiz/include_quiz_results.html', context)
+
+    # TODO allow non ajax requests
+    # return render(request, 'quiz/quiz_results.html', context)
