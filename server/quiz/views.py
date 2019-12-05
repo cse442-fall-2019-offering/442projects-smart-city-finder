@@ -1,7 +1,8 @@
 from django import forms
 from django.http import Http404
 from django.shortcuts import render
-
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 from time import sleep
 
 import numpy as np
@@ -127,15 +128,16 @@ def quiz_view(request):
     preferred_cities = None
     result = format_output(ratings, preferred_cities)
     print(result)
-    sleep(3)
+    # sleep(20)
+    # # FIXME:
+    # #   Improve result presentation page such that result
+    # #   can be rendered as a list of cities along with its ratings
+    # return redirect('/')
 
-    # city_id = 'us-ny-buffalo'
-    # context = {
-    #     'city_photo_filename': CITY_PHOTO_FILENAME_MAP[city_id],
-    # }
     context = {}
 
-    # FIXME:
-    #   Improve result presentation page such that result
-    #   can be rendered as a list of cities along with its ratings
-    return render(request, 'quiz/quiz_results.html', context)
+    # for the ajax request:
+    return render(request, 'quiz/include_quiz_results.html', context)
+
+    # TODO allow non ajax requests
+    # return render(request, 'quiz/quiz_results.html', context)
