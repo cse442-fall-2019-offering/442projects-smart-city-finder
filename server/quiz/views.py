@@ -12,7 +12,12 @@ from smart_city_finder.views import home # for homepage redirection
 
 
 CITY_PHOTO_FILENAME_MAP = {
-    'us-ny-buffalo': 'city-us-ny-buffalo.jpeg',
+    'Austin':      'cities/us-texas-austin.jpg',
+    'Buffalo':     'cities/us-ny-buffalo.jpg',
+    'Dallas':      'cities/us-ny-dallas.jpg',
+    'Denver':      'cities/us-co-denver.jpg',
+    'Los Angeles': 'cities/us-ca-losangeles.jpg',
+    'New York':    'cities/us-ny-newyork.jpg',
 }
 
 
@@ -124,10 +129,11 @@ def quiz_view(request):
     print(result)
     sleep(3)
 
-    city_id = 'us-ny-buffalo'
-    context = {
-        'city_photo_filename': CITY_PHOTO_FILENAME_MAP[city_id],
-    }
+    # city_id = 'us-ny-buffalo'
+    # context = {
+    #     'city_photo_filename': CITY_PHOTO_FILENAME_MAP[city_id],
+    # }
+    context = {}
 
     # FIXME:
     #   Improve result presentation page such that result

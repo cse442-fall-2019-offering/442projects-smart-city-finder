@@ -1,35 +1,186 @@
-   {% load static %}
-   <div class="testimonials-clean" id = "results" style="background-color: rgb(241,247,252);">
-        <div class="container" style="height: 720px;">
-            <img class="img-fluid mx-auto d-block" style="margin: 0 auto;" alt="Photo of City A" src="{% static '/assets/images/'|add:city_photo_filename %}" />
-            <div class="intro">
-                <p class="text-center" style="font-size: 24px;">&nbsp;City A is the best for you according to our system. City A ranks the highest in all three of the following categories. Here is why:</p>
-            </div>
-            <div class="row people" style="margin: 0px;">
-                <div class="col-md-6 col-lg-4 item" style="height: 320px;">
-                    <div class="box">
-                        <p class="description" style="font-size: 24px;">Reasons 1 blah blah blah Reason 2 blah blah blah Reason 3&nbsp;blah blah blah&nbsp;</p>
-                    </div>
-                    <div class="author">
-                        <h5 class="name" style="font-size: 32px;">Aspect 1</h5>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item" style="height: 320px;">
-                    <div class="box">
-                        <p class="description" style="font-size: 24px;">Reasons 1 blah blah blah Reason 2 blah blah blah Reason 3&nbsp;blah blah blah&nbsp;</p>
-                    </div>
-                    <div class="author">
-                        <h5 class="name" style="font-size: 32px;">Aspect 2</h5>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item" style="height: 320px;">
-                    <div class="box">
-                        <p class="description" style="font-size: 24px;">Reasons 1 blah blah blah Reason 2 blah blah blah Reason 3&nbsp;blah blah blah&nbsp;</p>
-                    </div>
-                    <div class="author">
-                        <h5 class="name" style="font-size: 32px;">Aspect 3</h5>
-                    </div>
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 my-3">
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-info" id="list">
+                        List View
+                    </button>
+                    <button class="btn btn-danger" id="grid">
+                        Grid View
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+    <div id="products" class="row view-group">
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid"
+                          src="{% static '/assets/images/cities/us-tx-austin.jpg' %}"
+                          alt="Austin, Texas" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        Austin, Texas</h4>
+                    <p class="group inner list-group-item-text">
+                      Based on information you entered, our system recommended city of
+                      <strong> Austin </strong> with a score of <strong> 9.2 </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid"
+                          src="{% static '/assets/images/cities/us-ny-buffalo.jpg' %}"
+                          alt="Buffalo, New York" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        Buffalo, New York</h4>
+                    <p class="group inner list-group-item-text">
+                      Based on information you entered, our system recommended city of
+                      <strong> Buffalo </strong> with a score of <strong> 8.8 </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid"
+                          src="{% static '/assets/images/cities/us-tx-dallas.jpg' %}"
+                          alt="Dallas, Texas" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        Dallas, Texas</h4>
+                    <p class="group inner list-group-item-text">
+                      Based on information you entered, our system recommended city of
+                      <strong> Dallas </strong> with a score of <strong> 8.5 </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid"
+                          src="{% static '/assets/images/cities/us-co-denver.jpg' %}"
+                          alt="Denver, Colorado" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        Denver, Colorado</h4>
+                    <p class="group inner list-group-item-text">
+                      Based on information you entered, our system recommended city of
+                      <strong> Denver </strong> with a score of <strong> 8.0 </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid"
+                          src="{% static '/assets/images/cities/us-ca-losangeles.jpg' %}"
+                          alt="Los Angeles, California" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        Los Angeles, California</h4>
+                    <p class="group inner list-group-item-text">
+                      Based on information you entered, our system recommended city of
+                      <strong> Los Angeles </strong> with a score of <strong> 7.7 </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid"
+                          src="{% static '/assets/images/cities/us-ny-newyork.jpg' %}"
+                          alt="New York, New York" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        New York City, New York</h4>
+                    <p class="group inner list-group-item-text">
+                      Based on information you entered, our system recommended city of
+                      <strong> New York City </strong> with a score of <strong> 7.3 </strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.view-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.thumbnail
+{
+    margin-bottom: 30px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 30px;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    border: 0;
+}
+.item.list-group-item .img-event {
+    float: left;
+    width: 30%;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+    display: inline-block;
+}
+.item.list-group-item .caption
+{
+    float: left;
+    width: 70%;
+    margin: 0;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item:after
+{
+    clear: both;
+}
+</style>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+              $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+              $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+  });
+</script>
