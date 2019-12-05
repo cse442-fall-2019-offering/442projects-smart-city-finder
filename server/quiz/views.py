@@ -11,6 +11,16 @@ from mxnet.gluon import nn
 from smart_city_finder.views import home # for homepage redirection
 
 
+CITY_PHOTO_FILENAME_MAP = {
+    'Austin':      'cities/us-texas-austin.jpg',
+    'Buffalo':     'cities/us-ny-buffalo.jpg',
+    'Dallas':      'cities/us-ny-dallas.jpg',
+    'Denver':      'cities/us-co-denver.jpg',
+    'Los Angeles': 'cities/us-ca-losangeles.jpg',
+    'New York':    'cities/us-ny-newyork.jpg',
+}
+
+
 def retrieve_user_input(request):
     '''
     Retrieve user inputted data from quiz form.
@@ -119,7 +129,13 @@ def quiz_view(request):
     print(result)
     sleep(3)
 
+    # city_id = 'us-ny-buffalo'
+    # context = {
+    #     'city_photo_filename': CITY_PHOTO_FILENAME_MAP[city_id],
+    # }
+    context = {}
+
     # FIXME:
     #   Improve result presentation page such that result
     #   can be rendered as a list of cities along with its ratings
-    return render(request, 'quiz/quiz_results.html', {})
+    return render(request, 'quiz/quiz_results.html', context)
