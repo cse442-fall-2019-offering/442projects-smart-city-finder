@@ -72,6 +72,14 @@
        color: black;
      }
 
+     .navbar .nav-link :not(.disabled) {
+       color: black !important;
+     }
+     .navbar .nav-item {
+       color: black !important;
+     }
+
+
      #home_page a:hover {
        color: black;
      }
@@ -91,7 +99,7 @@
 </head>
 
 <body>
-<div class="main">
+<div id="main" class="main">
   {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
@@ -116,11 +124,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto">
 {% block navbar_nav_links %}
-              <li><a href="{% url 'landing_page' %}#">Home</a></li>
-              <li><a href="{% url 'landing_page' %}privacy">Privacy Policy</a></li>
-			  <li><a href="{% url 'landing_page' %}terms">Terms of Service</a></li>
-              <li><a href="{% url 'landing_page' %}#info">Information Form</a></li>
-              <li> <a href="{% url 'landing_page' %}#results-pg">Results</a></li></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}privacy">Privacy Policy</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}terms">Terms of Service</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}#info">Information Form</a></li>
+              <li class="nav-item"><a class="nav-link disabled" id="navLinkResults" href="{% url 'landing_page' %}#quizResults">Results</a></li></li>
 {% endblock navbar_nav_links %}
             </ul>
           </div>

@@ -40,7 +40,19 @@
         var formData = form.serialize();
         var formPostUrl = form.attr('action');
         $.post(formPostUrl, formData, function (responseHtml) {
-          $(document.body).append(responseHtml);
+          var div = $('#quizResults');
+          if (!div.length) {
+            var div = $(document.createElement('div'));
+            div.attr('class', 'contact-clean');
+            div.attr('id', 'quizResults');
+            $('#main').append(div);
+            $('#navLinkResults').removeClass('disabled');
+          }
+          div.empty();
+          div.append(responseHtml);
+          //$(document.body).append(responseHtml);
+          // <a class="btn btn-primary" href="#quizSectionCitiesTransportation" style="text-transform: uppercase;">Next</a>
+          window.location = '#quizResults';
         });
         // don't submit the form normally
         event.preventDefault();
