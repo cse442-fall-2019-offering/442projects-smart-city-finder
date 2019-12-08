@@ -69,14 +69,16 @@
 
      .navbar a:hover {
        background-color: #ddd;
-       color: black;
+       /* color: black; */
+       color: rgba(0.0, 0.0, 0.0, 1.0);
      }
 
-     .navbar .nav-link :not(.disabled) {
-       color: black !important;
+     .navbar .nav-link {
+       color: rgba(0.0, 0.0, 0.0, 1.0) !important;
+       /* color: black !important; */
      }
-     .navbar .nav-item {
-       color: black !important;
+     .navbar .nav-link.disabled {
+       color: rgba(0.0, 0.0, 0.0, 0.3) !important;
      }
 
 
@@ -128,7 +130,7 @@
               <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}privacy">Privacy Policy</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}terms">Terms of Service</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}#info">Information Form</a></li>
-              <li class="nav-item"><a class="nav-link disabled" id="navLinkResults" href="{% url 'landing_page' %}#quizResults">Results</a></li></li>
+              <li class="nav-item"><a class="nav-link disabled" id="navLinkResults" href="{% url 'landing_page' %}#quizResults">Results</a></li>
 {% endblock navbar_nav_links %}
             </ul>
           </div>
